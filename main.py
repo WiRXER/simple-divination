@@ -8,35 +8,32 @@ items = [
 ]
 
 def start():
-    _start = True
-    while _start:
-        random.shuffle(items)
+    random.shuffle(items)
 
-        for i in items:
-            if items.index(i) < 10:
-                print(f'''
+    for i in items:
+        if items.index(i) < 10:
+            print(f'''
 |-----|
 |     |
 |  {items.index(i)}  |
 |     |
 |-----|
-        ''')
-            else:
-                print(f'''
+    ''')
+        else:
+            print(f'''
 |-----|
 |     |
 | {items.index(i)}  |
 |     |
 |-----|
-        ''')
-        
-        choice = int(input('Your choice --> '))
+    ''')
 
-        if choice < 0 or choice > len(items) - 1:
-            print(f'\u001b[31;1mMust choice a number 0 - {len(items) - 1}')
-        else:
-            print(f'\u001b[37;1mYour result: {items[choice]}')
-            _start = False
+    choice = int(input('Your choice --> '))
+
+    if choice < 0 or choice > len(items) - 1:
+        print(f'\u001b[31;1mMust choice a number 0 - {len(items) - 1}')
+    else:
+        print(f'\u001b[37;1mYour result: {items[choice]}')
 
 
 print('''
